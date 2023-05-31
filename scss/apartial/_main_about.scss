@@ -1,0 +1,24 @@
+.about {
+    width:100%;
+    padding:0 20px;
+    margin-top: 80px;
+    gap:10px;
+
+    & .title {
+        @include flexProp(100%,unset,flex-start,center);
+        font-size: 10px;
+        color:$blue;
+    }
+    & h2 {
+        margin-top: 10px;
+        color:$black2;
+        margin-bottom: 30px;
+    }
+    & .content {
+        width:95%;
+        background-color:$white;
+        margin:auto;
+        padding:20px 30px;
+        @include fontStyle(20px,400,30px,$text-secondary);
+    }
+}

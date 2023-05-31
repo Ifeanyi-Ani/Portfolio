@@ -1,0 +1,72 @@
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: $blue;
+    border-left: 10px solid $blue;
+    transition: 0.5s;
+    overflow: hidden;
+
+    &.active{
+        width: 80px;
+    }
+
+    & ul{
+        @include position(absolute,100%);
+        top: 0;
+        left: 0;
+        
+        & li {
+            @include position(relative,100%);
+            list-style: none;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+
+            &:hover, &.hovered {
+                background-color: $bg-primary;
+            }
+
+            &:nth-child(1){
+                margin-bottom: 40px;
+                pointer-events: none;
+            }
+
+            & a{
+                @include position(relative,100%);
+                display: flex;
+                text-decoration: none;
+                color: $bg-primary;
+
+                & .icon {
+                    @include position(relative,unset);
+                    display: block;
+                    min-width: 60px;
+                    @include heightStyle(60px,75px,center);
+
+                    & ion-icon{
+                        font-size: 1.75rem;
+                    }
+                }
+                & .title {
+                    @include position(relative,unset);
+                    display: block;
+                    padding: 0 10px;
+                    @include heightStyle(60px,60px,start);
+                    white-space: nowrap;
+                }
+            }
+            &:hover a, &.hovered a{
+                background-color: $bg-primary;
+                color: $blue;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+            &:hover a::before, & .hovered a::before{
+                @include curveStyle(-50px,unset,35px 35px 0 10px $bg-primary);
+            }
+            &:hover a::after, &.hovered a::after{
+                @include curveStyle(unset,-50px,35px -35px 0 10px $bg-primary);
+            }
+        }
+    }
+  }

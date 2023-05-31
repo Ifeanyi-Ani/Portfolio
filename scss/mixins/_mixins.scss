@@ -1,0 +1,50 @@
+@mixin position($type, $width) {
+    position: $type;
+    width: $width;
+}
+
+@mixin heightStyle($height,$line,$alignment) {
+    height: $height;
+    line-height: $line;
+    text-align: $alignment;
+}
+
+@mixin curveStyle($top,$bottom,$boxshadow) {
+    content: "";
+    position: absolute;
+    right: 0;
+    top:$top;
+    bottom:$bottom;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: $boxshadow;
+    pointer-events: none;
+}
+
+@mixin flexProp($width,$hiht,$justify,$align){
+    width: $width;
+    height: $hiht;
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin fontStyle($fts,$ftw,$lh,$color){
+    font-size:$fts;
+    font-weight: $ftw;
+    line-height: $lh;
+    color:$color;
+}
+@mixin btnStyle1{
+    background-color: $blue;
+    color:$white;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    width:150px;
+    padding:10px 5px;
+    border: none;
+    border-radius: 50px;
+}

@@ -1,0 +1,27 @@
+main {
+    @include position(absolute,calc(100%-300px));
+    left: 300px;
+    min-height: 100vh;
+    background: $bg-primary;
+    transition: 0.5s;
+
+    &.active{
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+    & .topbar {
+        @include flexProp(100%,60px,space-between,center);
+        padding: 0 10px;
+        position: sticky;
+        top: 0;
+        background-color: $bg-primary;
+        z-index: 10001;
+    }
+    & .toggle {
+        position: relative;
+        @include flexProp(60%,60px,flex-start,center);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+}
